@@ -4,20 +4,8 @@ lastname.addEventListener('input', function() {
 
     let response = notEmpty(this.value);
     
-    // recupàeration de l'erreur a afficher si besoin
-    let error = document.querySelector ('#lastnameError')
+   viewError ('#lastnameError', this, response);
     
-    //applique une bordure rouge par defaut
-    this.style.border = '2px solid red';
-    error.style.display= 'block';
-
-    //console.log(response);
-    
-    // equivalent a if (reponse === true){....}
-    if (response) {
-        this.style.border = '2px solid green';
-        error.style.display ='none';
-    }
 
 });
 
@@ -27,16 +15,9 @@ firstName.addEventListener('input', function() {
     //alert('changement!');
 
     let response = notEmpty(this.value);
-    this.style.border = '2px solid red';
-    let error = document.querySelector ('#firstnameError')
-    error.style.display= 'block';
 
-    //console.log(response);
-
-    if (response) {
-        this.style.border = '2px solid green';
-        error.style.display ='none';
-    }
+    viewError ('#firstnameError', this, response);
+ 
 });
 
 let pseudo = document.querySelector('#pseudo');
@@ -46,23 +27,15 @@ pseudo.addEventListener('input', function() {
 
     //verifie la longeur d'une chaine
     let response = isLength(this.value, 5);
-    let error = document.querySelector ('#pseudoError');
-
-    this.style.border = '2px solid red';
-    error.style.display= 'block';
-
-    //console.log(response);
-    if (response) {
-        this.style.border = '2px solid green';
-        error.style.display ='none';
-    }
+    viewError ('#pseudoError', this, response);
 });
 
-let mail = document.querySelector('#mail');
-mail.addEventListener('input', function() {
+let email = document.querySelector('#email');
+email.addEventListener('input', function() {
     //alert('changement!');
 
-    let response = notEmpty(this.value);
+    let response = isEmail(this.value);
+    //let response = checkEmail(this.value);
 
     let error = document.querySelector ('#emailError')
     this.style.border = '2px solid red';
@@ -75,11 +48,12 @@ mail.addEventListener('input', function() {
     }
 });
 
+//verification du mot de passe
 let password = document.querySelector('#password');
 password.addEventListener('input', function() {
     //alert('changement!');
 
-    let response = notEmpty(this.value);
+    let response = notEmpty(this.value, 6);
 
     let error = document.querySelector ('#passwordError')
     this.style.border = '2px solid red';
@@ -95,8 +69,8 @@ password.addEventListener('input', function() {
 let verifPassword = document.querySelector('#verifPassword');
 verifPassword.addEventListener('input', function() {
     //alert('changement!');
-
-    let response = notEmpty(this.value);
+    let password = document.querySelector('#password');
+    let response = isEqual(password.value, this.value);
 
     let error = document.querySelector ('#verifPasswordError')
     this.style.border = '2px solid red';
@@ -108,5 +82,10 @@ verifPassword.addEventListener('input', function() {
         error.style.display ='none';
     }
 });
+
+//verification email
+
+
+    
 
 

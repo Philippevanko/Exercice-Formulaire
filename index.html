@@ -13,6 +13,8 @@
             feather.replace();
         </script>
 
+        
+        
     <title>Document</title>
 </head>
 
@@ -35,26 +37,29 @@
             </div>
             <div>
                 <label for="mail">Email:</label>
-                <input type="email" id="mail" name="mail" >
-                <p class="error" id="emailError">Votre Email est obligatoire!</p>
+                <input type="email" id="email" name="email" >
+                <p class="error" id="emailError">Votre adresse Email est invalide!</p>
             </div>
             <div class="passwordIcon">
                 <label for="pass">Mot de passe (6 caracteres min):</label>
-                <input type="password" id="password" name="password"
+                <input type="password" id="password" placeholder="password"
                         min="6" >
                         <i ata-feather="eye"></i>
                         <i data-feather="eye-off"></i>
                 <p class="error" id="passwordError">Votre mot de passe est obligatoire!</p>
+                <img src=images/eye.png id="eye" onclick="changer()">
             </div>
             <div class="passwordIcon">
                 <label for="pass">Mot de passe (6 caracteres min):</label>
-                <input type="password" id="verifPassword" name="verifPassword"
+                <input type="password" id="verifPassword" placeholder="verifPassword"
                         min="6" >
-                        <i ata-feather="eye"></i>
-                        <i data-feather="eye-off"></i>
+                        
                 <p class="error" id="verifPasswordError">les mots de passe doivent etrte identique</p>
             </div>
-            <button>Valider les informations</button>
+            <div>
+                <button>Valider les informations</button>
+            </div>
+            
         </form>
     </body>
 </html>

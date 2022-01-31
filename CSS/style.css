@@ -16,3 +16,17 @@ label {
 
 
 }
+
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+div button{
+    background-color: rgb(46, 46, 228);
+    margin-top: 20px;
+    color:white;
+    border-radius: 20px;
+}
