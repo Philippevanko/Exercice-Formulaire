@@ -83,9 +83,51 @@ verifPassword.addEventListener('input', function() {
     }
 });
 
-//verification email
+
+//1 ere solution
+document.getElementById("eye").addEventListener("click", function(e){
+    var pwd = document.getElementById("password");
+    if(pwd.getAttribute("type")=="password"){
+        pwd.setAttribute("type","text");
+    } else {
+        pwd.setAttribute("type","password");
+    }
+});
+
+document.getElementById("eye1").addEventListener("click", function(e){
+    var vpwd = document.getElementById("verifPassword");
+    if(vpwd.getAttribute("type")=="password"){
+        vpwd.setAttribute("type","text");
+    } else {
+        vpwd.setAttribute("type","password");
+    }
+});
+
+/**
+ * afficher le mot de passe
+ */
+
+// 2 eme solution
+let eyes = document.querySelectorAll('.view-pwd');
+
+for(let element of eyes) {
+    Element.addEventListener('click', function(){
+        showHidePassword(this);
+    })
+}
 
 
-    
 
+
+/**
+ * Permet de generer un moty de passe aleatoire
+ */
+
+let link = document.querySelector('#generatePwd');
+link.addEventListener ('click', function () {
+    let passwordGenerate = generatePassword();
+    //console.log(passwordGenerate);
+    let inputPwd = document.querySelector('#password');
+    inputPwd.value = passwordGenerate;
+});
 

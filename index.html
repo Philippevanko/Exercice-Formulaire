@@ -40,19 +40,29 @@
                 <input type="email" id="email" name="email" >
                 <p class="error" id="emailError">Votre adresse Email est invalide!</p>
             </div>
+            
             <div class="passwordIcon">
+                
                 <label for="pass">Mot de passe (6 caracteres min):</label>
                 <input type="password" id="password" placeholder="password"
                         min="6" >
-                        <i ata-feather="eye"></i>
-                        <i data-feather="eye-off"></i>
+                        <button type="button" id="eye">
+                            <img src="images/eye.png" alt="eye" />
+                            </button>
                 <p class="error" id="passwordError">Votre mot de passe est obligatoire!</p>
-                <img src=images/eye.png id="eye" onclick="changer()">
+            <div>
+                <a href="#" id=generatePwd>Appliquer un mot de passe suggéré</a>
+            </div>  
+                            
             </div>
             <div class="passwordIcon">
-                <label for="pass">Mot de passe (6 caracteres min):</label>
+                <label for="pass">Verification mot de passe (6 caracteres min):</label>
                 <input type="password" id="verifPassword" placeholder="verifPassword"
                         min="6" >
+                    <button type="button" id="eye1">
+                    <img src="images/eye.png" alt="eye1" />
+                    </button>
+                    
                         
                 <p class="error" id="verifPasswordError">les mots de passe doivent etrte identique</p>
             </div>

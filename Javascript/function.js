@@ -72,6 +72,28 @@ let viewError = function(message, input, response) {
 
 }
 
+// Permet d'afficher ou non les mots de passe dans un champs formulaire
+
+let showHidePassword = function(element) {
+    let input = element.previousElementSibling;
+    //console.log(input);
+
+    //si input est strictement egal a "password" alors on applique la valeur 
+    input.type = input.type === 'password' ? 'text' : 'password';
+}
+
+//permet de generer un mot de passe aléatoire
+let generatePassword = function(min = 12) {
+    const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@&-_!$#+*=%';
+    let password = ''; 
+
+    for(let index = 0;index < min; index++) {
+        password += letters.charAt(Math.floor(Math.random() * letters.length));
+    }
+
+    return password;
+
+}
 
 
 
